@@ -1,7 +1,7 @@
-//SIFT特征点提取并进行匹配
-//version0.0
+//功能：SIFT特征点提取并进行匹配
+//版本：version1.0.0
 //所用opencv版本: opencv2.4.9
-//目前仅能在release下进行测试，debug下会运行有时会出现内存冲突
+//备注：目前仅能在release下进行测试，debug下运行有时会出现内存冲突
 
 #include <opencv2/opencv.hpp>
 #include <opencv2/features2d/features2d.hpp>
@@ -79,7 +79,8 @@ int main()
 	//imshow("desc", descriptor1);
 	//cout << endl << descriptor1 << endl;
 	matcher.match(descriptor1, descriptor2, matches);
-
+	
+	//显示匹配后的图像
 	drawMatches(img, kp1, img2, kp2, matches, img_matches);
 	imshow("matches", img_matches);
 
